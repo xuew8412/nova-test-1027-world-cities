@@ -1,0 +1,118 @@
+{
+  "version": "0.3",
+  "kind": "app",
+  "generatedAt": "2026-10-27T12:50:39.258Z",
+  "item": {
+    "title": "World Cities Population Explorer",
+    "subtitle": "Filter urban agglomerations by 2020 population"
+  },
+  "map": {
+    "type": "webmap",
+    "path": "./map.json"
+  },
+  "app": {
+    "template": "nova-app",
+    "preset": "analysis",
+    "showHeader": true,
+    "theme": {
+      "mode": "light",
+      "accent": "default"
+    },
+    "layout": {
+      "header": {
+        "hidden": false,
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "kpi",
+            "id": "matching-city-count",
+            "title": "Matching cities",
+            "source": {
+              "layerId": "1a17d6ad5d2-layer-2",
+              "scope": "view"
+            },
+            "statistic": "count",
+            "description": "Cities currently shown after the population filter.",
+            "autoPoll": false
+          }
+        ]
+      },
+      "left": {
+        "hidden": false,
+        "width": "340px",
+        "title": "Population filter",
+        "collapsed": false,
+        "blocks": [
+          {
+            "type": "selector",
+            "id": "population-slider",
+            "title": "Minimum population (2020)",
+            "source": {
+              "layerId": "1a17d6ad5d2-layer-2"
+            },
+            "field": "Pop_2020",
+            "control": "range",
+            "limit": 100
+          },
+          {
+            "type": "text",
+            "id": "filter-note",
+            "content": "Use the range control to show cities within a 2020 population range.",
+            "format": "plain"
+          }
+        ]
+      }
+    },
+    "widgets": [
+      {
+        "id": "default-home",
+        "type": "home",
+        "slot": "top-left",
+        "config": {}
+      },
+      {
+        "id": "default-scale-bar",
+        "type": "scaleBar",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-legend",
+        "type": "legend",
+        "slot": "bottom-left",
+        "config": {}
+      },
+      {
+        "id": "default-layer-list",
+        "type": "layerList",
+        "slot": "top-right",
+        "config": {}
+      },
+      {
+        "id": "default-basemap-gallery",
+        "type": "basemapGallery",
+        "slot": "top-right",
+        "config": {}
+      }
+    ],
+    "interactions": [],
+    "behaviors": []
+  },
+  "nova": {
+    "basename": "96734b04-7d2b-476c-b110-b31cf08bf146",
+    "presentationMode": "app",
+    "ownedGraphicsLayerIds": [],
+    "origin": {
+      "portalUrl": "https://www.arcgis.com",
+      "mapId": "output-4073db31-bbd3-43ec-bb85-1cc1f44b4b3f",
+      "mapName": "New Conversation",
+      "viewMode": "2d",
+      "capturedAt": "2026-10-27T12:50:39.253Z"
+    },
+    "sourceSelection": {
+      "mode": "all"
+    },
+    "unsupportedLayers": [],
+    "degradedFeatures": []
+  }
+}
